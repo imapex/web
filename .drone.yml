@@ -34,8 +34,6 @@ deploy:
     when:
       branch: "dev"
 
-
-deploy:
   webhook:
     image: plugins/drone-webhook
     skip_verify: true
@@ -44,10 +42,10 @@ deploy:
       username: $$MANTL_USERNAME
       password: $$MANTL_PASSWORD
     urls:
-      - https://$$MANTL_CONTROL/marathon/v2/apps/imapex/web/restart?force=true
+      - https://$$MANTL_CONTROL/marathon/v2/apps/imapex/web-prod/restart?force=true
+      - https://$$MANTL_CONTROL/marathon/v2/apps/imapex/web-prod-www/restart?force=true
     when:
       branch: "master"
-
 
 notify:
   spark:
