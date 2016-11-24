@@ -9,7 +9,7 @@ h3, h4 {
     color: #111;
 }
 .container {
-    padding: 80px 120px;
+    padding: 80px 25px;
 }
 .person {
     border: 10px solid transparent;
@@ -37,6 +37,9 @@ h3, h4 {
     .container{
         padding: 25px 25px;
         overflow-x: hidden;
+    }
+    .mobilebuffer{
+        height: 30px;
     }
 }
 
