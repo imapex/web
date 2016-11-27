@@ -190,3 +190,27 @@ textarea {
     width: 100%;
     height: 100%;
 }
+
+/*-- change navbar dropdown color --*/
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: white;
+    color: #2d2d30;
+}
+
+.contact-button {
+    position: fixed;
+    bottom: -5px;
+    right: 20px;
+    background-color: #005a8e;
+    color: white;
+    border-width: medium;
+    padding: 5px 10px;
+    border-color: #5289c0;
+    border-radius: 5px;
+}
+
+.contact-button:active, .contact-button:active:focus, .contact-button:focus {
+    background-color: #5289c0;
+    color: white;
+    border-color: #005a8e;
+}
