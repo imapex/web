@@ -6,12 +6,13 @@
 
 angular.module('imapex')
     .controller('DemosCtrl',
-        function($scope, $location, $anchorScroll) {
+        function($scope, demos, $location, $anchorScroll) {
             $scope.welcome = "Welcome to imapex!";
             $scope.scrollTo = function(id) {
                 $location.hash(id);
                 $anchorScroll();
-            }
+            };
+            $scope.demos = demos;
         }
     );
 

@@ -31,12 +31,12 @@
 </nav>
 
 <div id="done">
-    <div class="container">
+    <div class="container" ng-controller="DemosCtrl">
         <div class="row">
             <div class="col-sm-9">
-                <h3>Completed Demo's Ready for Use!</h3>
+                <h3>imapex Applications and Demos!</h3>
                 <p>
-                    Here are demo's created by the imapex team that are ready for wide spread use.  These demo's may have
+                    Here are demo's created by the imapex team.  These demo's may have
                     continued development and enhancement so check back often.
                 </p>
             </div>
@@ -45,670 +45,66 @@
             </div>
         </div>
         <hr>
-        <!-- App description starts here -->
-        <!-- CHROnIC -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="854"
-                        height="480"
-                        src="https://www.youtube.com/embed/VEXby7V8Szs"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
+        <div data-ng-repeat="demo in demos" class="row row-bg-1">
+            <div class="col-sm-12">
+                <h2>{{ demo["name"] }}</h2>
+
+                <div class="responsive-video" ng-if='demo["youtube"]'>
+                    <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
+                    <iframe width="854"
+                            height="480"
+                            ng-src='{{demo["youtube"]}}'
+                            frameborder="0"
+                            allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-            <br>
+            <div>&nbsp;</div>
             <div class="col-sm-6">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <label>Name:</label>
-                        Cisco Health Report & ONline Information Collector (CHROnIC)
+                        <label>Code Repo:</label>
+                        <div>
+                            <a href='{{ demo["github"] }}' target="_blank">
+                                {{ demo["github"] }} <img width="25px" src="images/logos/github_color.png">
+                            </a>
+                        </div>
                     </li>
                     <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/CHROnIC" target="_blank">imapex/CHROnIC</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Josh Anderson, Chad Peterson, & Loy Evans
+                        <label>Development Team:</label>
+                        <div data-ng-repeat="dev in demo['devs']">
+                            {{ dev["name"] }}&nbsp;
+                            <span ng-if="dev['github']">
+                                <a href='{{ dev["github"] }}' target="_blank">
+                                    <img width="25px" src="images/logos/github_color.png">
+                                </a>
+                            </span>
+                            <span ng-if="dev['twitter']">
+                                <a href='https://twitter.com/{{ dev["twitter"] }}' target="_blank">
+                                    <img width="25px" src="images/logos/twitter_bird.png">
+                                </a>
+                            </span>
+
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <label>Description:  </label>
-                        This is an application designed to interact with Cisco Infrastructure components and key
-                        software elements, and perform an online analysis of their compliance to set standards.
+                        {{ demo["description"] }}
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-6">
-                <a href="demoresources/chronic/chronic.png"
+            <div class="col-sm-6" ng-if='demo["image"]'>
+                <a href='{{ demo["image"] }}'
                    target="_blank">
-                    <img src="demoresources/chronic/chronic.png"
+                    <img src='{{ demo["image"] }}'
                          class="img-responsive thumbnail"
                     >
                 </a>
             </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- C2K-IOx -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="854"
-                        height="480"
-                        src="https://www.youtube.com/embed/uacr-M5RM-g"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        Cisco Kiddie Kounter (C2K-IoX)
-                    </li>
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/c2k_demo" target="_blank">imapex/c2k_demo</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Ryan Criss, Chuck Wood, & Harish Chawla
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        An application to count kids on a school bus and provide notifications via Spark and/or
-                        Tropo/SMS.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <a href="demoresources/c2k_iox/c2k-diagram.png"
-                   target="_blank">
-                    <img src="demoresources/c2k_iox/c2k-diagram.png"
-                         class="img-responsive thumbnail"
-                    >
-                </a>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- AIC -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="854" height="480"
-                        src="https://www.youtube.com/embed/n-mJIbw-1Uw"
-                        frameborder="0" allowfullscreen></iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        Automated Infrastructure Configuration
-                    </li>
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/aic_app" target="_blank">imapex/aic_app</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Michael Bonnett Jr, Rusty Pesselato, & Dan Williams
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        AIC is an application that monitors for infrastructure changes, such as HBA hardware
-                        replacement, and automatically reconfigures the affected systems to account for the change.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <a href="demoresources/aic/aic_logical_arch.png"
-                   target="_blank">
-                    <img src="demoresources/aic/aic_logical_arch.png"
-                         class="img-responsive thumbnail"
-                    >
-                </a>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- AHOD -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="854"
-                        height="480"
-                        src="https://www.youtube.com/embed/ytXI272kDxg"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        All Hands On Deck (AHOD)
-                    </li>
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/ahod_home" target="_blank">imapex/ahod_home</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Dan Behrens & Peter Fincher
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        An IOx Application that gathers data from PLC, monitors for specific events, and alerts via
-                        Cisco Spark when a monitored event occurs.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <a href="demoresources/ahod/AHOD_Overview-Phase1.jpg"
-                   target="_blank">
-                    <img src="demoresources/ahod/AHOD_Overview-Phase1.jpg"
-                         class="img-responsive thumbnail"
-                    >
-                </a>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- CHIVE -->
-        <div class="row row-bg-1">
-            <!--<div class="responsive-video">-->
-            <!--&lt;!&ndash; This is the default YouTube embed code.  Place it between the responsive-video divs &ndash;&gt;-->
-            <!--<iframe width="560"-->
-            <!--height="315"-->
-            <!--src=""-->
-            <!--frameborder="0"-->
-            <!--allowfullscreen>-->
-            <!--</iframe>-->
-            <!--</div>-->
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        Cisco Heat Indication Visualization Explorer (CHIVE)
-                    </li>
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/chive_demo" target="_blank">imapex/chive_demo</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Justin Barksdale & Clint Mann
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        Cisco Heat Indication Visualization Explorer (An application to visualize hot spots in a
-                        data center on a map and over time using standard API calls on sensors in
-                        Cisco Data Center Products.)
-                    </li>
-                </ul>
-            </div>
-            <!--<div class="col-sm-6">-->
-            <!--<a href="demoresources/acimigrate/acimigrate.png"-->
-            <!--target="_blank">-->
-            <!--<img src="demoresources/acimigrate/acimigrate.png"-->
-            <!--class="img-responsive thumbnail"-->
-            <!--&gt;-->
-            <!--</a>-->
-            <!--</div>-->
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- ACI Migrate -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/SzjwplFwkL8"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        ACI Migration Wizard
-                    </li>
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/acimigrate" target="_blank">imapex/acimigrate</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Kevin Corbin & Chad Peterson
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        A migration wizard which will migrate VLAN configuration from Legacy Nexus environments to an
-                        ACI fabric
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <a href="demoresources/acimigrate/acimigrate.png"
-                   target="_blank">
-                    <img src="demoresources/acimigrate/acimigrate.png"
-                         class="img-responsive thumbnail"
-                    >
-                </a>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- GBoS -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="854"
-                        height="480"
-                        src="https://www.youtube.com/embed/ySjgylacZDU"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        Giant Ball of String (GBoS)
-                    </li>
-                    <li class="list-group-item"><label>Demo Link (Kiosk):</label>
-                        <a href="http://gbos.apps.imapex.io/" target="_blank">http://gbos.apps.imapex.io</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/gbos_demo" target="_blank">imapex/gbos_demo</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Kevin Corbin & Hank Preston
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        Giant Ball of String (GBoS) is a sample demonstration application for road side attraction
-                        management.  It demonstrates the integration of several Cisco technologies (IOx, Cisco Zeus,
-                        Spark, and Tropo) with non-Cisco techologies such as cloud platforms and micro-controllers to
-                        solve business problems.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <a href="demoresources/gbos/gbos_site.jpg"
-                   target="_blank">
-                    <img src="demoresources/gbos/gbos_site.jpg"
-                         class="img-responsive thumbnail"
-                    >
-                </a>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- EDQOS -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/cxmlz4XkV24"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  Event Driven QoS</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/ed-qos">imapex/ed-qos</a>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Steve Luzynski & Matt Brainard</li>
-                    <li class="list-group-item"> <label>Description:  </label>
-                        Event Driven QoS is a simple demo application illustrating programmatic control of APIC-EM to
-                        change QoS parameters in an attached network. This is driven by an external event. In the
-                        initial implementation, the external event source is changes in the weather; other event
-                        sources are planned.
-                    </li>
-                </ul>
-            </div>
-            <!--<div class="col-sm-6">-->
-            <!--<img src="demoresources/appregistry/screenshot.png"-->
-            <!--class="img-responsive"-->
-            <!--&gt;-->
-            <!--</div>-->
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- CS Alert -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/sFghP0lqdv4"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  CMX Spark Alert (csalert)</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/csalert">imapex/csalert</a>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Bryan Adams & Paul Lewis</li>
-                    <li class="list-group-item"> <label>Description:  </label>
-                        The goal is to create an application that will take location-based event triggers from CMX and
-                        output a Spark message to a specific room or user. The CMX input could be device tracking,
-                        congestion thresholds, geo-fencing alerts, etc.
-                        <br>
-                        Our use case is a retail store that will detect shopper congestion (by tracking client count on
-                        a nearby AP) and send an alert message to the manager or employee in that department so that
-                        they can assist the shoppers.
-                        <br>
-                        We would like to keep the app modular to adjust both the CMX inputs and the Spark output.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <img src="demoresources/csalert/csalert.png"
-                     class="img-responsive"
-                >
-            </div>
+            <div class="col-sm-12"><hr></div>
 
         </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- AppRegistry -->
-        <div class="row row-bg-1">
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  AppRegistry</li>
-                    <li class="list-group-item"><label>Demo Link:</label>
-                        <a href="http://appregistry.apps.imapex.io/" target="_blank">http://appregistry.apps.imapex.io</a>
-                    </li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/appregistry">imapex/appregistry</a>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Kevin Corbin</li>
-                    <li class="list-group-item"><label>Description:  </label>
-                        This is a simple frontend for APIC-EM which allows business owners to register applications in a
-                        portal with a minimal amount of technical details about the application, and transfer that
-                        information to APIC-EM to be consumed in EasyQos policies
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <img src="demoresources/appregistry/screenshot.png"
-                     class="img-responsive"
-                >
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- ioxduino -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/KFQw7loxLJ0"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>Name:</label>
-                        ioxduino
-                    </li>
-                    <!--If the app has an always on demo available, provide a link here.-->
-                    <!--<li class="list-group-item">-->
-                    <!--<label>Demo Link:</label>-->
-                    <!--<a href="" target="_blank"></a>-->
-                    <!--</li>-->
-                    <li class="list-group-item">
-                        <label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/ioxduino" target="_blank">imapex/ioxduino</a>
-                    </li>
-                    <li class="list-group-item">
-                        <label>Dev Team:</label>
-                        Hank Preston
-                    </li>
-                    <li class="list-group-item">
-                        <label>Description:  </label>
-                        IOx Proof of Concept to integrate a Cisco Router with an Arduino Microcontroller.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <a href="demoresources/ioxduino/arduino_diagram.jpg"
-                   target="_blank">
-                    <img src="demoresources/ioxduino/arduino_diagram.jpg"
-                         class="img-responsive thumbnail"
-                    >
-                </a>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- MyHero -->
-        <div class="row row-bg-1">
-            <div class="col-sm-6">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  MyHero</li>
-                    <li class="list-group-item"><label>Demo Link:</label>
-                        <a href="http://myhero.apps.imapex.io/#/demos" target="_blank">http://myhero.apps.imapex.io</a>
-                    </li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/hpreston/myhero_demo">hpreston/myhero_demo</a>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Hank Preston</li>
-                    <li class="list-group-item"><label>Description:  </label>
-                        MyHero is a very simple sample application developed using a "Cloud Native" design method to be
-                        used for demonstration and education purposes. It is composed of several microservices, each
-                        leveraging standard API interaction. The minimal deployment of MyHero consists of just three
-                        services, and when deployed with all features, it can be as many as ten different services.
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <img src="demoresources/myhero/myhero-demo-i2.png"
-                     class="img-responsive"
-                >
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
 
     </div>
-</div>
 
-
-<div id="indevelopment" class="bg-1">
-    <div class="container">
-        <h3>Demo's Currently In Development</h3>
-        <p>Here are the demo's that are currently in development by the imapex team.</p>
-
-        <hr>
-        <!-- App description starts here -->
-        <!-- GADD -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/Nxex1kpwRYA"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-4">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  GADD Project:
-                        "Gomorrah Automated Distributed Defense"</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/gadd">imapex/gadd</a>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Chet Puskarz & Ryan Shoemaker</li>
-                </ul>
-            </div>
-            <div class="col-sm-8">
-                <ul class="list-group">
-                    <li class="list-group-item"> <label>Description:  </label>
-                        Using Spark and NFVIS along with ACI and NGIPS* The idea of the demo is based on an event/alert
-                        in the datacenter, dynamically deploy a FW at offending remote brach. Phase 1 will be simulating
-                        an event/alert without an IPS.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!--DC Jeeves -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/3vpalwCzRCw"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-4">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  DC Jeeves</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/dcjeeves_demo">imapex/dcjeeves_demo</a><br>
-                        <a href="https://github.com/imapex/dcjeeves_app">imapex/dcjeeves_app</a><br>
-                        <a href="https://github.com/imapex/dcjeeves_spark">imapex/dcjeeves_spark</a><br>
-                        <a href="https://github.com/imapex/dcjeeves_ucsd">imapex/dcjeeves_ucsd</a><br>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Mike Tokarz & Russel Wilkinson</li>
-                </ul>
-            </div>
-            <div class="col-sm-8">
-                <ul class="list-group">
-                    <li class="list-group-item"> <label>Description:  </label>
-                        DC Jeeves is your adaptable datacenter butler. His goal is to make your life easier by
-                        providing an interactive interface through tools like Spark & Tropo and turning your requests
-                        into actionable functions in your datacenter. Jeeves, provision a server for me!
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!--IOT Notification Agent -->
-        <div class="row row-bg-1">
-            <div class="responsive-video">
-                <!-- This is the default YouTube embed code.  Place it between the responsive-video divs -->
-                <iframe width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/FheCN6B42N4"
-                        frameborder="0"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <br>
-            <div class="col-sm-4">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  IOT Notification Agent</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label></li>
-                    <li class="list-group-item"><label>Dev Team:</label> Kevin Corbin & Chris Bogdon</li>
-                </ul>
-            </div>
-            <div class="col-sm-8">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Description:  </label>
-                        This application serves as a generic event notification engine for IOT enabled routers.
-                        The engine will react to any external event and perform some type of notification.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!--Time Data Path -->
-        <div class="row row-bg-1">
-            <div class="col-sm-4">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  Time Data Path (TDP)</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label>
-                        <a href="https://github.com/imapex/time-data-path">/imapex/time-data-path</a>
-                    </li>
-                    <li class="list-group-item"><label>Dev Team:</label> Bryan Byrne & Ben Flowers</li>
-                </ul>
-            </div>
-            <div class="col-sm-8">
-                <ul class="list-group">
-                    <li class="list-group-item"> <label>Description:  </label>
-                        Time Data Path (TDP) leverages APIC-EM Path Trace to identify the path a flow takes through the
-                        network. Once the flow has been identified TDP uses either the APIC-EM API or NX-API to pull
-                        interface statistics and plot statistics over time using an OpenSource cachet database.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- App description ends here -->
-        <hr>
-        <!-- App description starts here -->
-        <!-- Spark Trak -->
-        <div class="row row-bg-1">
-            <div class="col-sm-4">
-                <ul class="list-group">
-                    <li class="list-group-item"><label>Name:</label>  Spark Trak</li>
-                    <li class="list-group-item"><label>GitHub Repo:</label></li>
-                    <li class="list-group-item"><label>Dev Team:</label> Tim Wittbrod & Blair Hicks</li>
-                </ul>
-            </div>
-            <div class="col-sm-8">
-                <ul class="list-group">
-                    <li class="list-group-item"> <label>Description:  </label>
-                        Spark Trak is a professional collaboration application leveraging Cisco Spark to provide
-                        secure communication.  Intended to be used by health care professionals, laywers, insurance
-                        agents, etc - any professional that needs to share information pertaining to a client.  By
-                        entering into Spark Room, the professionals are able to discuss and access confidential
-                        records. While in the Spark Room, they are able to initiate actions relevant to the client -
-                        order procedures, prescribe medication, set appointments.  Upon exiting the Spark room, the
-                        collaboration session is archived and can generate a billing record for the client.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- App description ends here -->
-    </div>
 </div>

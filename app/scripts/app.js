@@ -10,7 +10,7 @@ var app = angular.module('imapex', [
 ]);
 
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $sceDelegateProvider) {
     $routeProvider
         .when('/index', {
             templateUrl: 'views/main.html',
@@ -27,4 +27,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         })
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        "http://*.youtube.com/embed/**",
+        "https://*.youtube.com/embed/**"
+    ]);
 });
+
