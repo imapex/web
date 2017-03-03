@@ -30,22 +30,42 @@
     </div>
 </nav>
 
+
+
 <div id="done">
     <div class="container" ng-controller="DemosCtrl">
         <div class="row">
             <div class="col-sm-9">
-                <h3>imapex Applications and Demos!</h3>
-                <p>
-                    Here are demo's created by the imapex team.  These demo's may have
-                    continued development and enhancement so check back often.
-                </p>
+                <div>
+                    <h3>imapex Applications and Demos!</h3>
+                    <p>
+                        Here are demo's created by the imapex team.  These demo's may have
+                        continued development and enhancement so check back often.
+                    </p>
+                    <hr>
+                    <div>
+                        Use this search box to search across the demos.  You can search for specific technologies,
+                        key words, or developer names.
+                    </div>
+                    <div class="form-group">
+                        <input type="text"
+                               ng-model="filter"
+                               ng-change="changeFilter()"
+                               id="searchBox" class="form-control">
+                        <p class="text-info">Examples:  Spark, ACI, Tropo, IOX, Data Center, Steve, etc</p>
+                    </div>
+                    <div>
+                        <button ng-click="resetFilter()" class="btn filter-reset">Reset Search</button>
+                    </div>
+
+                </div>
             </div>
             <div class="col-sm-3">
                 <img class="img-responsive" src="images/imapex_standing_notext_sm.png">
             </div>
         </div>
         <hr>
-        <div data-ng-repeat="demo in demos" class="row row-bg-1">
+        <div data-ng-repeat="demo in demos | filter: filter" class="row row-bg-1">
             <div class="col-sm-12">
                 <h2>{{ demo["name"] }}</h2>
 
@@ -104,7 +124,6 @@
             <div class="col-sm-12"><hr></div>
 
         </div>
-
     </div>
 
 </div>

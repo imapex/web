@@ -13,6 +13,16 @@ angular.module('imapex')
                 $anchorScroll();
             };
             $scope.demos = demos;
+
+            // initialize filter object
+            $scope.filter = "";
+
+            // reset the filter
+            $scope.resetFilter = function() {
+                // set filter object back to blank
+                $scope.filter = "";
+            }
+
         }
     );
 
