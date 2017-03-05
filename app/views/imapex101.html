@@ -1,0 +1,238 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-href="#">imapex</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#about">ABOUT</a></li>-->
+                <li><a href="#/imapex101/#modules">MODULES</a></li>
+                <li><a href="#/imapex101/#agenda">AGENDA</a></li>
+
+                <li><a ng-href="#">HOME</a></li>
+                <li><a ng-href="#/imapex101">IMAPEX 101</a></li>
+                <li><a ng-href="#/demos">APPS</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://suggestions.imapex.io" target="_blank">Suggestion Box</a></li>
+                        <li><a href="https://github.com/imapex" target="_blank">GitHub</a></li>
+                        <li><a href="https://hub.docker.com/r/imapex" target="_blank">Docker</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="about" >
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" align="center">
+                <img class="img-responsive" width="300"
+                     src="images/imapex_logo_text.png">
+            </div>
+        </div>
+        <h2>What is imapex 101?</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <a class="thumbnail" href="images/cicd_toolchain.png">
+                    <img class="img-responsive img-thumbnail" src="images/cicd_toolchain.png">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    Developing applications using modern technologies and practices like DevOps requires more than
+                    simply understanding a programming language like Python or Javascript.  Experience and skill with
+                    source control, container technologies, collaboration services, and build bots is also needed.
+                </p>
+                <p class="text-primary">
+                    <span class="label label-info">imapex 101</span> is an intensive hands-on training program designed
+                    to jump start new developers with a
+                    foundation in DevOps practices.  The training material is designed to introduce a concept, provide
+                    basic hands-on examples, and challenges to reinforce the material.
+                </p>
+                <p>
+                    The learning modules and labs used within imapex 101 are a subset of training material developed
+                    by the imapex community.  All modules and labs are available at
+                    <a href="https://github.com/imapex-training" target="_blank">github.com/imapex-training</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="modules">
+    <div class="container">
+        <h2>imapex 101 Modules</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="images/logos/devops.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_general_development_concepts/blob/master/README.md" target="_blank">
+                        General Development Concepts
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 90 minutes</p>
+                <p>
+                    Developing software involves much more than simply programming languages and APIs.
+                    In this module we will explore four topics that are fundamental to any successful development project.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="images/logos/dev_skills.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_general_development_skills/blob/master/README.md" target="_blank">
+                        General Development Skills
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 120 minutes</p>
+                <p>
+                    This hands on module is designed to provide you with some experience with several important utility tools
+                    and technologies which are very important and time saving.
+                    We will cover Basic Linux Tools, Markdown, and several Python topics.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="images/logos/github.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_adv_git/blob/master/README.md" target="_blank">
+                        Advanced Git and GitHub
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 180 minutes</p>
+                <p>
+                    Git and GitHub remain the most popular source control platforms for developers today.
+                    We will review the basics of git repository creation and interaction, before moving into topics
+                    including branches, pull requests, issues, and forking in this hands-on module.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="images/logos/docker.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_adv_docker/blob/master/README.md" target="_blank">
+                        Advanced Docker and Docker Hub
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 120 minutes</p>
+                <p>
+                    Docker, continues to be a major aspect of modern development practices and deployment strategies.
+                    Topics discussed in this hands-on module include Dockerfile creation, registry options,
+                    the meaning and use of tags, and auto-build repositories.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="images/logos/drone.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_cicd/blob/master/README.md" target="_blank">
+                        Implementing CICD
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 120 minutes</p>
+                <p>
+                    In the session we will dive into CICD and come out with a detailed understanding of what happens in a
+                    "Code Pipeline".
+                    The module begins with foundational knowledge about CICD, and end with a guided lab where a full
+                    pipeline is constructed and tested.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="images/logos/mantl.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_mantl/blob/master/README.md" target="_blank">
+                        Deploying Micro-Service Applications
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 90 minutes</p>
+                <p>
+                    Application developers need a modern infrastructure stack (or cloud) to deploy onto.  In this module
+                    students are shown how to consume several leading Open Source tools including Marathon/Mesos, Consul and
+                    Traefik for deploying their applications onto a Mantl.io stack.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="images/logos/app_process.png" class="img-responsive" width="200">
+                <h3>
+                    <a href="https://github.com/imapex-training/mod_mantl/blob/master/README.md" target="_blank">
+                        From Idea to Application
+                    </a>
+                </h3>
+                <p class="text-primary">Approximately 60 minutes</p>
+                <p>
+                    Good demo applications should be easy to deploy, use and contribute code to.
+                    This means focus up front on questions like
+                    "How will others deploy my application?",
+                    "How can I quickly and easily test application changes?",
+                    and "What is my MVP and how can I build it fast!" are critical.
+                    In this module we'll suggest an approach to the building applications.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="agenda">
+    <div class="container">
+        <h2>Suggested imapex 101 Agenda</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="images/slideshow/room1.jpg" class="img-responsive">
+            </div>
+            <div class="col-sm-8">
+                <p>
+                    Finding time to set aside for training can be difficult, so the imapex 101 program has been designed
+                    to be compact and intensive.  Each module quickly covers the relevant concepts and spends the marjority
+                    of time with guided hands on lessons and exercises.  Though each organizer can adjust as needed, the
+                    suggested agenda targets a 3 day training block.
+                </p>
+                <p class="text-info">
+                    * Times listed are only guidelines.  Each module could go shorter or longer depending on discussion
+                    and challenges
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Day 1</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">General Development Concepts <span class="badge">90m</span></li>
+                    <li class="list-group-item">General Development Skills <span class="badge">120m</span></li>
+                    <li class="list-group-item">Advanced Git and GitHub <span class="badge">180m</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h3>Day 2</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Advanced Docker and Docker Hub <span class="badge">120m</span></li>
+                    <li class="list-group-item">Implementing CICD <span class="badge">120m</span></li>
+                    <li class="list-group-item">Deploying Micro-Service Applications <span class="badge">90m</span></li>
+                    <li class="list-group-item">Open Mic - Share Your Work <span class="badge">90m</span></li>
+                </ul>
+                <p class="text-warning"><small><em>
+                    Ending Day 2 by bringing in food and drinks during the "Open Mic" session is a great way to
+                    decompress after 2 solid days of focused work.
+                </em></small></p>
+            </div>
+            <div class="col-lg-4">
+                <h3>Day 3</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Demo Brainstorming Session <span class="badge">60m</span></li>
+                    <li class="list-group-item">From Idea to Application <span class="badge">60m</span></li>
+                    <li class="list-group-item">Begin Demo Development <span class="badge">240m</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

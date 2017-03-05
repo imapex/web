@@ -8,3 +8,4 @@ tmp
 .vagrant
 app/images/slideshow/large/
 drone-secrets.yml
+app/archive
