@@ -11,7 +11,8 @@ app.constant('demos', [
         "devs": [
             {
                 "name": "Josh Anderson",
-                "github": "https://github.com/joshand"
+                "github": "https://github.com/joshand",
+                "twitter": "josh_l_anderson"
             },
             {
                 "name": "Chad Peterson",
@@ -77,7 +78,8 @@ app.constant('demos', [
         "devs": [
             {
                 "name": "Dan Behrens",
-                "github": "https://github.com/danbehrens1"
+                "github": "https://github.com/danbehrens1",
+                "twitter": "danielrbehrens"
             },
             {
                 "name": "Peter Fincher",
@@ -95,11 +97,13 @@ app.constant('demos', [
         "devs": [
             {
                 "name": "Justin Barksdale",
-                "github": "https://github.com/3pings"
+                "github": "https://github.com/3pings",
+                "twitter": "3Pings"
             },
             {
                 "name": "Clint Mann",
-                "github": "https://github.com/clintmann"
+                "github": "https://github.com/clintmann",
+                "twitter": "CiscoMann_SE"
             }
         ],
         "description": "Cisco Heat Indication Visualization Explorer (An application to visualize hot spots in a data center on a map and over time using standard API calls on sensors in Cisco Data Center Products.)"
@@ -155,7 +159,8 @@ app.constant('demos', [
         "devs": [
             {
                 "name": "Steve Luzynski",
-                "github": "https://github.com/sluzynsk"
+                "github": "https://github.com/sluzynsk",
+                "twitter": "SteveLuzynski"
             },
             {
                 "name": "Matt Brainard",
@@ -265,7 +270,8 @@ app.constant('demos', [
         "devs": [
             {
                 "name": "Mike Tokarz",
-                "github": "https://github.com/myTokarz"
+                "github": "https://github.com/myTokarz",
+                "twitter": "myTokarz"
             },
             {
                 "name": "Russel Wilkinson",
@@ -286,7 +292,8 @@ app.constant('demos', [
             },
             {
                 "name": "Chris Bogdon",
-                "github": "https://github.com/chrisbog"
+                "github": "https://github.com/chrisbog",
+                "twitter": "ChrisBogDog"
             }
         ],
         "description": "This application serves as a generic event notification engine for IOT enabled routers. The engine will react to any external event and perform some type of notification."
@@ -299,7 +306,8 @@ app.constant('demos', [
         "devs": [
             {
                 "name": "Blair Hicks",
-                "github": "https://github.com/blairhicks"
+                "github": "https://github.com/blairhicks",
+                "twitter": "tuxdbird"
             },
             {
                 "name": "Tim Wittbrod",
