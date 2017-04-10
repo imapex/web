@@ -315,5 +315,24 @@ app.constant('demos', [
             }
         ],
         "description": "Spark Trak is a professional collaboration application leveraging Cisco Spark to provide secure communication.  Intended to be used by health care professionals, laywers, insurance agents, etc - any professional that needs to share information pertaining to a client.  By entering into Spark Room, the professionals are able to discuss and access confidential records. While in the Spark Room, they are able to initiate actions relevant to the client - order procedures, prescribe medication, set appointments.  Upon exiting the Spark room, the collaboration session is archived and can generate a billing record for the client."
+    },
+    {
+        "status": "active",
+        "name": "TAC Bot",
+        "github": "https://github.com/imapex/tac-bot",
+        "youtube": "https://www.youtube.com/embed/61D02aYOP1U",
+        "devs": [
+            {
+                "name": "Matthew Brainard",
+                "github": "https://github.com/mbrainar",
+                "twitter": "mbrainar"
+            },
+            {
+                "name": "Steven Luzynski",
+                "github": "https://github.com/sluzynsk",
+                "twitter": "SteveLuzynski"
+            }
+        ],
+        "description": "TAC Bot is a Spark bot designed to help facilitate communications between Cisco SEs, TAC engineers, escalation teams, and potentially customers. In one place, Cisco SEs can get status of TAC case from a CASE API, including but not limited to case owner, description, when the case was last updated, etc."
     }
 ]);
