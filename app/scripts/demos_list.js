@@ -333,6 +333,7 @@ app.constant('demos', [
                 "twitter": "SteveLuzynski"
             }
         ],
-        "description": "TAC Bot is a Spark bot designed to help facilitate communications between Cisco SEs, TAC engineers, escalation teams, and potentially customers. In one place, Cisco SEs can get status of TAC case from a CASE API, including but not limited to case owner, description, when the case was last updated, etc."
+        "description": "TAC Bot is a Spark bot designed to help facilitate communications between Cisco SEs, TAC engineers, escalation teams, and potentially customers. In one place, Cisco SEs can get status of TAC case from a CASE API, including but not limited to case owner, description, when the case was last updated, etc. Due to the potentially sensitive nature of TAC case data, TAC bot will only respond to requests for TAC case data if the request comes from a Cisco employee.",
+		"image": "demoresources/tac-bot/tac-bot-architecture.jpg"
     }
 ]);
